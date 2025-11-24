@@ -90,7 +90,7 @@ Aplikasi ini dikembangkan sebagai bagian dari:
 
 ## Author
 
-Alpaenf
+Mukhammad Alfaen Fadillah
 
 ## License
 
