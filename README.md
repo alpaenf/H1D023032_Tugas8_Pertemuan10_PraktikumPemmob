@@ -74,7 +74,11 @@ flutter run
 
 ## Screenshot
 
-(Tambahkan screenshot aplikasi di sini)
+<img src="" width="250">
+<img src="" width="250">
+<img src="" width="250">
+<img src="" width="250">
+<img src="" width="250">
 
 ## Pengembangan
 
