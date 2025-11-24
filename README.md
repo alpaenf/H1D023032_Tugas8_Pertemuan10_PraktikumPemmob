@@ -74,7 +74,7 @@ flutter run
 
 ## Screenshot
 
-<img src="" width="250">
+<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/detail_produk.png" width="250">
 <img src="" width="250">
 <img src="" width="250">
 <img src="" width="250">
