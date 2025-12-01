@@ -74,11 +74,11 @@ flutter run
 
 ## Screenshot
 
-<img src="" width="250">
-<img src="" width="250">
-<img src="" width="250">
-<img src="" width="250">
-<img src="" width="250">
+<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/detail_produk.png" width="250">
+<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/list_produk.png" width="250">
+<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/popup.png" width="250">
+<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/sidebar.png" width="250">
+<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/tambah_produk.png" width="250">
 
 ## Pengembangan
 
@@ -90,7 +90,7 @@ Aplikasi ini dikembangkan sebagai bagian dari:
 
 ## Author
 
-Alpaenf
+Mukhammad Alfaen Fadillah
 
 ## License
 
