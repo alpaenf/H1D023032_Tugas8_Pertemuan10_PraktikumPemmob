@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tokokita/bloc/login_bloc.dart';
+import 'package:tokokita/helpers/user_info.dart';
+import 'package:tokokita/ui/produk_page.dart';
 import 'package:tokokita/ui/registrasi_page.dart';
+import 'package:tokokita/widget/warning_dialog.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -19,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login Alfaen'),
+        title: const Text('Login'),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -30,6 +34,7 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 _emailTextField(),
                 _passwordTextField(),
+                const SizedBox(height: 20),
                 _buttonLogin(),
                 const SizedBox(height: 30),
                 _menuRegistrasi(),
@@ -41,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  // TextBox Email
+  // ========== Textbox Email ==========
   Widget _emailTextField() {
     return TextFormField(
       decoration: const InputDecoration(labelText: "Email"),
@@ -56,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  // TextBox Password
+  // ========== Textbox Password ==========
   Widget _passwordTextField() {
     return TextFormField(
       decoration: const InputDecoration(labelText: "Password"),
@@ -72,42 +77,83 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  // Tombol Login
+  // ========== Tombol Login ==========
   Widget _buttonLogin() {
     return ElevatedButton(
-      child: const Text("Login"),
-      onPressed: () {
-        bool validate = _formKey.currentState!.validate();
-        if (validate) {
-          setState(() {
-            _isLoading = true;
-          });
-
-          // TODO: Tambahkan proses login (API call)
-
-          setState(() {
-            _isLoading = false;
-          });
-        }
-      },
+      onPressed: _isLoading
+          ? null
+          : () {
+              if (_formKey.currentState!.validate()) _submit();
+            },
+      child: _isLoading
+          ? const SizedBox(
+              width: 20,
+              height: 20,
+              child: CircularProgressIndicator(strokeWidth: 2),
+            )
+          : const Text("Login"),
     );
   }
 
-  // Menu Registrasi
-  Widget _menuRegistrasi() {
-    return Center(
-      child: InkWell(
-        child: const Text(
-          "Registrasi",
-          style: TextStyle(color: Colors.blue),
+  // ========== Submit Login ==========
+  void _submit() {
+    _formKey.currentState!.save();
+    setState(() {
+      _isLoading = true;
+    });
+
+    LoginBloc.login(
+      email: _emailTextboxController.text,
+      password: _passwordTextboxController.text,
+    ).then((value) async {
+      setState(() {
+        _isLoading = false;
+      });
+
+      if (value.code == 200) {
+        await UserInfo().setToken(value.token.toString());
+        await UserInfo().setUserID(int.parse(value.userID.toString()));
+
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const ProdukPage()),
+        );
+      } else {
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (BuildContext context) => WarningDialog(
+            description: "Login gagal, silahkan coba lagi",
+          ),
+        );
+      }
+    }, onError: (error) {
+      setState(() {
+        _isLoading = false;
+      });
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) => WarningDialog(
+          description: "Login gagal: ${error.toString()}",
         ),
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const RegistrasiPage()),
-          );
-        },
+      );
+    });
+  }
+
+  // ========== Menu Registrasi ==========
+  Widget _menuRegistrasi() {
+    return InkWell(
+      child: const Text(
+        "Registrasi",
+        style: TextStyle(color: Colors.blue),
       ),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const RegistrasiPage()),
+        );
+      },
     );
   }
 }

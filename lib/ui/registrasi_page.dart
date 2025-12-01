@@ -114,21 +114,61 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
   // Tombol Registrasi
   Widget _buttonRegistrasi() {
     return ElevatedButton(
-      child: const Text("Registrasi"),
-      onPressed: () {
-        bool validate = _formKey.currentState!.validate();
-        if (validate) {
-          setState(() {
-            _isLoading = true;
-          });
+      child: _isLoading
+          ? const SizedBox(
+              width: 20,
+              height: 20,
+              child: CircularProgressIndicator(
+                color: Colors.white,
+                strokeWidth: 2,
+              ),
+            )
+          : const Text("Registrasi"),
+      onPressed: _isLoading
+          ? null
+          : () {
+              bool validate = _formKey.currentState!.validate();
+              if (validate) {
+                setState(() {
+                  _isLoading = true;
+                });
 
-          // TODO: panggil API registrasi
+                // Simulasi API call
+                Future.delayed(const Duration(seconds: 2), () {
+                  setState(() {
+                    _isLoading = false;
+                  });
 
-          setState(() {
-            _isLoading = false;
-          });
-        }
-      },
+                  // Tampilkan dialog sukses
+                  showDialog(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (BuildContext context) => AlertDialog(
+                      title: const Text("Registrasi Berhasil"),
+                      content: const Text(
+                          "Akun Anda telah berhasil dibuat. Silakan login."),
+                      actions: [
+                        TextButton(
+                          child: const Text("OK"),
+                          onPressed: () {
+                            Navigator.pop(context); // Tutup dialog
+                            Navigator.pop(context); // Kembali ke login
+                          },
+                        ),
+                      ],
+                    ),
+                  );
+                });
+
+                // TODO: Ganti simulasi di atas dengan panggil API registrasi
+                // Contoh:
+                // RegistrasiBloc.registrasi(
+                //   nama: _namaTextboxController.text,
+                //   email: _emailTextboxController.text,
+                //   password: _passwordTextboxController.text
+                // ).then((value) { ... });
+              }
+            },
     );
   }
 }
