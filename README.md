@@ -74,11 +74,38 @@ flutter run
 
 ## Screenshot
 
-<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/detail_produk.png" width="250">
-<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/list_produk.png" width="250">
-<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/popup.png" width="250">
+1. Halaman Login
+<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/Cuplikan%20layar%202025-12-01%20210736.png" width="250">
+
+2. Halaman Registrasi
+<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/Cuplikan%20layar%202025-12-01%20210935.png" width="250">
+
+3. Halaman List Produk
+<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/Cuplikan%20layar%202025-12-01%20211143.png" width="250">
+
+4. Halaman Tambah Produk
+<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/Cuplikan%20layar%202025-12-01%20211504.png" width="250">
+
+5. Halaman Ubah Produk
+<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/Cuplikan%20layar%202025-12-01%20211716.png" width="250">
+
+6. Halaman Detail Produk
+<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/Cuplikan%20layar%202025-12-01%20211837.png" width="250">
+
+7. Halaman Hapus Produk
+<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/Cuplikan%20layar%202025-12-01%20211944.png" width="250">
+
+8. Sidebar Logout
 <img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/sidebar.png" width="250">
-<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/tambah_produk.png" width="250">
+
+9. Alert Login Tidak Diisi Field
+<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/Cuplikan%20layar%202025-12-01%20212157.png" width="250">
+
+10. Alert Registrasi Tidak Diisi Field
+<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/Cuplikan%20layar%202025-12-01%20212312.png" width="250">
+
+11. Alert Tambah Produk Tidak Diisi Field
+<img src="https://github.com/alpaenf/H1D023032_Tugas8_Pertemuan10_PraktikumPemmob/blob/main/Cuplikan%20layar%202025-12-01%20212440.png" width="250">
 
 ## Pengembangan
 
